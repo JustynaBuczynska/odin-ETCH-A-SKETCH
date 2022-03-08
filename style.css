@@ -1,0 +1,24 @@
+body{
+    background-color:white;
+    color: black;
+    font-size: medium;
+     }
+
+    .container{
+        color: black;
+        display: grid;
+        grid-template-columns: repeat(16, 1fr );
+        grid-template-rows: repeat(16, 1fr );
+        border: 1px solid black;
+        height: 500px;
+        width: 500px;
+      }
+
+      .squares{
+         border: 1px solid black;
+      }
+
+      .squares-klik{
+        background-color: grey;
+        border: 1px solid black;
+     }
