@@ -32,18 +32,25 @@ function createGrid(size) {
         let squares = document.createElement('div');
         squares.classList.add('squares');
         container.appendChild(squares);
+        squares.klikCounter = 0;
         squares.addEventListener('mouseenter', () => {
-            if (squares.classList.contains('squares-klik')){
-                squares.classList.remove('squares-klik');
-                squares.classList.add('squares-double-klik');
-            }
-            else if (squares.classList.contains('squares-double-klik')){
-                squares.classList.remove('squares-double-klik');
-                squares.classList.add('squares-three-klik');
+
+            if (squares.klikCounter > 0) {
+                let color = squares.style.backgroundColor;
+                let [red, green, blue] = color.substring(4, color.length - 1).split(', ');
+                red = red * 0.5;
+                green = green * 0.5;
+                blue = blue * 0.5;
+                squares.style.backgroundColor = `rgb(${red},${green}, ${blue})`;
+
             }
             else {
-                squares.classList.add('squares-klik');
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                squares.style.backgroundColor = `rgb(${red},${green}, ${blue})`;
             };
+            squares.klikCounter++;
         })
     };
 }
