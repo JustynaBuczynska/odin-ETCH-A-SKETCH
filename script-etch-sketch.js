@@ -33,8 +33,17 @@ function createGrid(size) {
         squares.classList.add('squares');
         container.appendChild(squares);
         squares.addEventListener('mouseenter', () => {
-
-            squares.classList.add('squares-klik');
+            if (squares.classList.contains('squares-klik')){
+                squares.classList.remove('squares-klik');
+                squares.classList.add('squares-double-klik');
+            }
+            else if (squares.classList.contains('squares-double-klik')){
+                squares.classList.remove('squares-double-klik');
+                squares.classList.add('squares-three-klik');
+            }
+            else {
+                squares.classList.add('squares-klik');
+            };
         })
-    }
+    };
 }

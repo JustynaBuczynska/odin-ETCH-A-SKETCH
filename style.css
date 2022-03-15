@@ -22,3 +22,13 @@ body{
         background-color: grey;
         border: 1px solid black;
      }
+
+     .squares-double-klik{
+      background-color: rgb(39, 37, 37);
+      border: 1px solid black;
+   }
+
+   .squares-three-klik{
+      background-color: black;
+      border: 1px solid black;
+   }
